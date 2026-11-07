@@ -4,7 +4,7 @@ function closeMenu() { nav.classList.remove('open'); menu.setAttribute('aria-exp
 menu.addEventListener('click', () => { const open = nav.classList.toggle('open'); menu.setAttribute('aria-expanded', String(open)); menu.setAttribute('aria-label', open ? 'Close navigation' : 'Open navigation'); });
 nav.querySelectorAll('a').forEach(link => link.addEventListener('click', closeMenu));
 document.addEventListener('keydown', event => { if (event.key === 'Escape') closeMenu(); });
-document.querySelector('#year').textContent = new Date().getFullYear();
+const yearElement = document.querySelector('#year'); if (yearElement) yearElement.textContent = new Date().getFullYear();
 document.querySelector('#copy-email').addEventListener('click', async () => {
   const status = document.querySelector('#copy-status');
   try {
