@@ -21,3 +21,32 @@ body{font-size:16px}.eyebrow{font-size:11px;letter-spacing:1.5px}.hero-copy>p{fo
 .nav-cta{white-space:nowrap}@media(max-width:370px){.nav-cta>span{display:none}}
 
 .restored-careloop{color:#252622;background:#e8ece2}.restored-careloop .preview-top{color:#637361}.restored-careloop .illustration-label{color:#67705d}
+
+/* Mobile containment: allow content to shrink and controls to wrap. */
+@media (max-width: 760px) {
+  .wrap { width: 100%; margin-inline: auto; }
+  .hero, .projects, .about, .services, .process, .process ol {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .hero > *, .projects > *, .about > *, .services > *,
+  .process > *, .process li, .values article > div {
+    min-width: 0;
+  }
+  .hero-actions { flex-wrap: wrap; gap: 16px; }
+  .hero-actions .button, .hero-actions .text-link {
+    max-width: 100%; white-space: normal;
+  }
+  .project-links { flex-wrap: wrap; gap: 16px; }
+  .project-links > * { min-width: 0; max-width: 100%; }
+  .project, .credential-info, .values article > div {
+    overflow-wrap: anywhere;
+  }
+  .screenshot-preview { min-width: 0; max-width: 100%; }
+  .screenshot-preview img { min-width: 0; max-width: 100%; }
+  .screenshot-caption { flex-wrap: wrap; }
+  .credential-actions { min-width: 0; flex-shrink: 1; }
+  .header { flex-wrap: wrap; height: auto; min-height: 78px; padding-block: 12px; }
+  #navigation { top: 100%; }
+  .hero-visual { min-width: 0; }
+  .code-window pre { white-space: pre-wrap; overflow-wrap: anywhere; }
+}
